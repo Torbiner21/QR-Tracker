@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98674d5b3669b604abe658f2ceac4a4e, type: 3}
+  m_Name: QR_Config_Ascension
+  m_EditorClassIdentifier: 
+  autoStart: 0
+  stopAfterFinalize: 1
+  payloadContainsFilter: 2
+  iterationAmount: 7
+  burstPosRmsThresholdMm: 2
+  burstAngleRmsThresholdDeg: 3
+  samplesPerBurst: 10
+  interScanIntervalSeconds: 0.15
+  reacquireCooldownSeconds: 0.15
+  maxViewAngleFromNormalDeg: 45
+  requireViewpointDiversity: 1
+  minAngleBetweenBurstsDeg: 5
+  minDistanceDeltaM: 0.02
+  finalWindow: 6
+  inlierMaxMm: 4
+  inlierMaxDeg: 3
+  irlsIterations: 4
+  huberPosK_mm: 3
+  huberRotK_deg: 3
+  restartKey: 121
+  resetTargetOnRestart: 0
+  invokeAdditionalEvents: 0
