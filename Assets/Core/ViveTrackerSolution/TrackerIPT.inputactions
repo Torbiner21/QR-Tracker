@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "TrackerIPT",
+    "maps": [
+        {
+            "name": "Trackers",
+            "id": "fdcc746e-8318-4ab1-85ba-f3dfd7ca3b73",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "03208058-b49f-45f9-a0a5-57ed247244d4",
+                    "expectedControlType": "Vector3",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5ab2337c-c8c1-47a4-8c56-7208cc4124f9",
+                    "path": "<ViveTracker>/devicePosition",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

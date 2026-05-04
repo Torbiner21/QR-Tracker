@@ -431,6 +431,7 @@ public class SimpleQRCalibrator : MonoBehaviour/*, IConfigurable*/
                             else
                             {
                                 OnValidScan?.Invoke(_series.AcceptedBursts);
+                                Debug.Log("ValidScan");
                             }
                         }
                     }
@@ -629,6 +630,7 @@ public class SimpleQRCalibrator : MonoBehaviour/*, IConfigurable*/
 
         if (targetToPlace)
         {
+            targetToPlace.gameObject.SetActive(true);   
             targetToPlace.SetPositionAndRotation(finalPose.position, finalPose.rotation);
             OnFinalized?.Invoke(targetToPlace);
             if (invokeAdditionalEvents) OnFinalizedAdditional?.Invoke(targetToPlace);
@@ -638,6 +640,10 @@ public class SimpleQRCalibrator : MonoBehaviour/*, IConfigurable*/
             Debug.LogWarning("targetToPlace not assigned; pose computed but not applied.");
             //Log.Warn(LogCat, "targetToPlace not assigned; pose computed but not applied.", this);
         }
+
+        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
+        go.transform.position = finalPose.position;
+        go.transform.localScale = Vector3.one * 0.05f;
 
         s.Finalized = true;
         targetProgressReference = 1f;

@@ -183,6 +183,7 @@ public class OpenVrTrackerReader : MonoBehaviour
     private bool       _lastPreCalibValid  = false;
 
 
+    GameObject debugSphere;
 
     public enum TrackerAxis
     {
@@ -234,6 +235,9 @@ public class OpenVrTrackerReader : MonoBehaviour
                 Debug.Log("[Tracker] HMD sync key pressed but enableHmdSync is OFF in the Inspector.", this);
         }
         //if (!isSynced) return;
+
+        //if (debugSphere == null)
+        //    debugSphere = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
         var poses = new TrackedDevicePose_t[OpenVR.k_unMaxTrackedDeviceCount];
         OpenVR.System.GetDeviceToAbsoluteTrackingPose(
@@ -342,6 +346,8 @@ public class OpenVrTrackerReader : MonoBehaviour
 
             break;
         }
+
+        //debugSphere.transform.position = TrackerWorldPosition;
     }
 
     /// <summary>
