@@ -15,14 +15,14 @@ MonoBehaviour:
   autoStart: 0
   stopAfterFinalize: 1
   payloadContainsFilter: 2
-  iterationAmount: 7
+  iterationAmount: 4
   burstPosRmsThresholdMm: 2
   burstAngleRmsThresholdDeg: 3
   samplesPerBurst: 10
   interScanIntervalSeconds: 0.15
   reacquireCooldownSeconds: 0.15
   maxViewAngleFromNormalDeg: 45
-  requireViewpointDiversity: 1
+  requireViewpointDiversity: 0
   minAngleBetweenBurstsDeg: 5
   minDistanceDeltaM: 0.02
   finalWindow: 6

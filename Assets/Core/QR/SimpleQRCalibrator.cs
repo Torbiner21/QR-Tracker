@@ -60,10 +60,13 @@ public class SimpleQRCalibrator : MonoBehaviour/*, IConfigurable*/
     public UnityEvent<Transform> OnFinalized;
     public UnityEvent<Transform> OnFinalizedAdditional;
     public UnityEvent<bool> OnSystemToggled;
+    public UnityEvent<Vector3, Quaternion> OnQrScanFinished;
 
     [Header("Runtime Toggle / Debug")]
     [SerializeField] private KeyCode toggleKey = KeyCode.F8;
     [SerializeField] private Transform cameraOverride;
+
+    public float Progress => _running ? targetProgressReference : 0f;
 
     //private static readonly LogCategory LogCat = LogCatalogCalibration.QRScanner;
     private const float PostResetSeedDelaySeconds = 0.15f;
@@ -640,6 +643,8 @@ public class SimpleQRCalibrator : MonoBehaviour/*, IConfigurable*/
             Debug.LogWarning("targetToPlace not assigned; pose computed but not applied.");
             //Log.Warn(LogCat, "targetToPlace not assigned; pose computed but not applied.", this);
         }
+
+        OnQrScanFinished?.Invoke(finalPose.position, finalPose.rotation);
 
         GameObject go = GameObject.CreatePrimitive(PrimitiveType.Sphere);
         go.transform.position = finalPose.position;
